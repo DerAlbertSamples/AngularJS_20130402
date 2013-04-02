@@ -4,25 +4,32 @@
 
         function buttonEditDirective() {
             return {
-                restrict: 'E',
-                replace: true,
-                scope: {
-                    title: '@',
-                    action: '&'
-                },
-                template: "<div class='btn btn-primary btn-mini' ng-click='action()' ><i class='icon-edit icon-white'></i></div>"
+                restrict: 'A',
+                scope: {},
+                link: function(scope, element, attrs, controller) {
+                    element.addClass('btn');
+                }
             };
         }
 
         function buttonSubmitDirective() {
             return {
-                restrict: 'E',
-                replace: true,
-                scope: {
-                    title: '@',
-                    action: '&'
-                },
-                template: "<button type='submit'  class='btn btn-info btn-small'  ng-click='action(menu)' ><i class='icon-ok icon-white'></i></button>"
+                restrict: 'A',
+                scope: {},
+                link: function (scope, element, attrs, controller) {
+                    element.addClass('btn btn-default');
+                }
+            };
+        }
+
+        function buttonDeleteDirective() {
+            return {
+                restrict: 'A',
+                scope: {},
+                link: function (scope, element, attrs, controller) {
+                    element.addClass('btn btn-danger');
+                    element.prepend("<i class='icon icon-remove'></i>&nbsp;");
+                }
             };
         }
 
@@ -38,6 +45,7 @@
             };
         }
 
+        directives.btnDelete = [buttonDeleteDirective];
         directives.btnEdit = [buttonEditDirective];
         directives.btnRemove = [buttonRemoveDirective];
         directives.btnSubmit = [buttonSubmitDirective];

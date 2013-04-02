@@ -20,7 +20,9 @@
             };
             
             if ($routeParams.Id) {
-                $scope.showFirma($routeParams.Id);
+                firmaResource.get({ Id: firmaId }, function (result) {
+                    $scope.firma = result;
+                });
             } else {
                 delete $scope.firma;
             }
