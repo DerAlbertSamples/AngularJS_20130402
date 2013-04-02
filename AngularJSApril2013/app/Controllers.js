@@ -13,7 +13,7 @@
             });
         }
 
-        controllers.Firma = firmaController;
+        controllers.Firma = ['$scope', '$resource', firmaController];
 
     })(april.Controllers || (april.Controllers = {}));
 })(April || (April = {}));
