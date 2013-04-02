@@ -30,16 +30,23 @@
 
         <h1>Demo 3</h1>
 
-        <ul>
+        <table class="table table-striped">
+            <tr ng-repeat="item in items">
+                <td>{{item.name}}</td>
+                <td>{{item.price | currency}} </td>
 
-            <li ng-repeat="item in items">{{item.name}} {{item.price | currency}} {{ item.lastDrunk | date :'fullDate'}}</li>
-        </ul>
+                <td>{{ item.lastDrunk | date :'fullDate'}}</td>
+            </tr>
+        </table>
 
 
         <form>
-        <input  type="text" ng-model="name"/>
+        <input  type="text" ng-model="name" placeholder="Name" autofocus /><br/>
+
+        <input  type="text" ng-model="price" placeholder="Preis" /><br/>
         <button class="btn btn-primary"  ng-click="addNewItem()">Hinzufügen</button>
-        </form>    </div>
+        </form>
+    </div>
     <script src="Scripts/angular.min.js"></script>
     <script src="Scripts/i18n/angular-locale_de-de.js"></script>
 

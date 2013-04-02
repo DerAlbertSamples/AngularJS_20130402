@@ -7,4 +7,11 @@ function Demo2Ctrl ($scope)
         {name: 'Reisdorf', price: 1.30, lastDrunk: '2013-02-01'},
         {name: 'Gaffel', price: 1.25, lastDrunk: '2012-12-01'}
     ];
+
+    $scope.addNewItem = function(){
+
+        $scope.items.push({name:$scope.name, price : $scope.price, lastDrunk : new Date()});
+        $scope.name='';
+        $scope.price='';
+    }
 }
