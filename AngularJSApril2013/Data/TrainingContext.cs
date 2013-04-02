@@ -9,6 +9,10 @@ namespace AngularJSApril2013.Data
         public IDbSet<Person> Personen { get; set; }
         public IDbSet<Firma> Firmen { get; set; }
 
+        public TrainingContext()
+        {
+            Configuration.ProxyCreationEnabled = false;
+        }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

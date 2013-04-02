@@ -1,58 +1,41 @@
 ﻿<!DOCTYPE html>
 <html lang="de">
-<head>
-    <title>Angular JS April 2013 - .net user group Köln Sample</title>
-    <link href="Content/bootstrap.css" rel="stylesheet" />
-    <link href="Content/bootstrap-responsive.css" rel="stylesheet" />
-    <link href="Content/app.css" rel="stylesheet" />
- </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="brand" href="#/">Angular JS</a>
-                <div class="nav-collapse collapse">
-                    <ul class="nav">
-                        <li><a href="#/home">Home</a></li>
-                        <li><a href="#/about">About</a></li>
-                        <li><a href="#/contact">Contact</a></li>
-                    </ul>
+    <head>
+        <title>Angular JS April 2013 - .net user group Köln Sample</title>
+        <link href="Content/bootstrap.css" rel="stylesheet" />
+        <link href="Content/bootstrap-responsive.css" rel="stylesheet" />
+        <link href="Content/app.css" rel="stylesheet" />
+    </head>
+    <body  ng-app="april">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="brand" href="#/">Angular JS</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li><a href="#/home">Home</a></li>
+                            <li><a href="#/firma">Firma</a></li>
+                            <li><a href="#/about">About</a></li>
+                            <li><a href="#/contact">Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="container" ng-app="april"  ng-controller="Demo3">
-
-        <h1>Demo 3</h1>
-
-        <table class="table table-striped">
-            <tr ng-repeat="item in items">
-                <td>{{item.name}}</td>
-                <td>{{item.price | currency}} </td>
-
-                <td>{{ item.lastDrunk | date :'fullDate'}}</td>
-
-                <td><button class="btn btn-danger" ng-click="removeItem(item)"><i class="icon icon-remove"></i> Entfernen</button> </td>
-            </tr>
-        </table>
-        <h2><ng-pluralize count='items.length' when="beerCountText"/></h2>
-
-        <form>
-        <input  type="text" ng-model="name" placeholder="Name" autofocus/><br/>
-
-        <input  type="text" ng-model="price" placeholder="Preis" /><br/>
-        <button class="btn btn-primary" ng-click="addNewItem()"><i class="icon icon-check"></i> Hinzufügen</button>
-        </form>
-    </div>
-    <script src="Scripts/angular.min.js"></script>
-    <script src="Scripts/i18n/angular-locale_de-de.js"></script>
-    <script src="app/Controllers.js"></script>
-    <script src="app/app.js"></script>
-</body>
+        <div class="container">
+        
+            <ng-view></ng-view>
+     
+        </div>
+        <script src="Scripts/angular.min.js"> </script>
+        <script src="Scripts/i18n/angular-locale_de-de.js"> </script>
+        <script src="app/Controllers.js"> </script>
+        <script src="app/app.js"> </script>
+    </body>
 </html>
