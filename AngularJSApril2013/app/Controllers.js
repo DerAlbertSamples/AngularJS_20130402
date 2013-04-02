@@ -1,19 +1,28 @@
 ﻿var April;
 
-(function(april) {
+(function (april) {
 
-    (function(controllers) {
+    (function (controllers) {
 
-        function firmaController($scope, $resource) {
-            
-            var firmaResource = $resource('/api/firma/:id');
+        function firmaController($scope, $resource, $routeParams) {
 
-            firmaResource.query(null, function(result) {
+            var firmaResource = $resource('/api/firma/:Id');
+
+            firmaResource.query(null, function (result) {
                 $scope.firmen = result;
             });
+
+            if ($routeParams.Id) {
+                firmaResource.get($routeParams, function(result) {
+                    $scope.firma = result;
+                });
+            } else {
+                delete $scope.firma;
+            }
+            
         }
 
-        controllers.Firma = ['$scope', '$resource', firmaController];
+        controllers.Firma = ['$scope', '$resource', '$routeParams', firmaController];
 
     })(april.Controllers || (april.Controllers = {}));
 })(April || (April = {}));
