@@ -26,13 +26,13 @@
         </div>
     </div>
 
-    <div class="container" ng-app>
+    <div class="container" ng-app  ng-controller="Demo2Ctrl">
 
-        <h1>Demo 1</h1>
+        <h1>Demo 2</h1>
 
-        <input type="text" ng-model="name"/>
-        <h2>Hallo {{name}}</h2>
-
+        <ul>
+            <li ng-repeat="item in items">{{item.name}}</li>
+        </ul>
     </div>
     <script src="Scripts/angular.min.js"></script>
     <script src="app/app.js"></script>
