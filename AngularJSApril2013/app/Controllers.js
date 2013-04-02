@@ -4,7 +4,7 @@
 
     (function (controllers) {
 
-        function firmaController($scope, $resource, $routeParams) {
+        function firmaController($scope, $resource, $routeParams, $location) {
 
             var firmaResource = $resource('/api/firma/:Id');
 
@@ -13,16 +13,19 @@
             });
 
             if ($routeParams.Id) {
-                firmaResource.get($routeParams, function(result) {
-                    $scope.firma = result;
-                });
+                $scope.showFirma($routeParams.Id);
             } else {
                 delete $scope.firma;
             }
-            
+
+            $scope.showFirma = function(firmaId) {
+                firmaResource.get({ Id: firmaId }, function(result) {
+                    $scope.firma = result;
+                });
+            };
         }
 
-        controllers.Firma = ['$scope', '$resource', '$routeParams', firmaController];
+        controllers.Firma = ['$scope', '$resource', '$routeParams', '$location', firmaController];
 
     })(april.Controllers || (april.Controllers = {}));
 })(April || (April = {}));

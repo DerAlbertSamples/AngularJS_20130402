@@ -9,7 +9,7 @@
     </thead>
     <tbody>
         <tr ng-repeat="firma in firmen">
-            <td><a href="#/firma/{{firma.Id}}">{{firma.Name1}}</a></td>
+            <td><a ng-click="showFirma(firma.Id)">{{firma.Name1}}</a></td>
             <td>{{firma.Name2}}</td>
         </tr>
     </tbody>
