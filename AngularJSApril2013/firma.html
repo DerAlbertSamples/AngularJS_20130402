@@ -11,14 +11,18 @@
         <tr ng-repeat="firma in firmen">
             <td><a ng-click="showFirma(firma.Id)">{{firma.Name1}}</a></td>
             <td>{{firma.Name2}}</td>
+            <td><btn-remove action="removeFirma(firma)" title="entfernen"></btn-remove></td>
         </tr>
     </tbody>
 </table>
 
-    <div >
+    <div ng-show="firma">
         <h3>Firma</h3>
         <form>
-           <label>Name 1:</label><input type="text" ng-model="firma.Name1"/>
-           <label>Name 2:</label><input type="text" ng-model="firma.Name2"/>
+            <label>Name 1:</label><input type="text" ng-model="firma.Name1"/>
+            <label>Name 2:</label><input type="text" ng-model="firma.Name2"/>
         </form>
+        <ul>
+            <li ng-repeat="abteilung in firma.Abteilungen">{{abteilung.Name}}</li>
+        </ul>
     </div>

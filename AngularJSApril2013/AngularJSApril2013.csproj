@@ -86,6 +86,7 @@
     <None Include="Content\app.less" />
     <Content Include="app\app.js" />
     <Content Include="app\Controllers.js" />
+    <Content Include="app\Directives.js" />
     <Content Include="Content\app.css">
       <DependentUpon>app.less</DependentUpon>
     </Content>

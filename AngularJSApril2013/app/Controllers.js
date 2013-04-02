@@ -12,17 +12,19 @@
                 $scope.firmen = result;
             });
 
+    
+            $scope.showFirma = function (firmaId) {
+                firmaResource.get({ Id: firmaId }, function (result) {
+                    $scope.firma = result;
+                });
+            };
+            
             if ($routeParams.Id) {
                 $scope.showFirma($routeParams.Id);
             } else {
                 delete $scope.firma;
             }
 
-            $scope.showFirma = function(firmaId) {
-                firmaResource.get({ Id: firmaId }, function(result) {
-                    $scope.firma = result;
-                });
-            };
         }
 
         controllers.Firma = ['$scope', '$resource', '$routeParams', '$location', firmaController];
