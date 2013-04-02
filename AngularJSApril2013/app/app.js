@@ -9,10 +9,13 @@ function Demo2Ctrl ($scope)
     ];
 
     $scope.addNewItem = function(){
-
         $scope.items.push({name:$scope.name, price : $scope.price, lastDrunk : new Date()});
         $scope.name='';
         $scope.price='';
+    }
+
+    $scope.removeItem = function(item) {
+        $scope.items.splice($scope.items.indexOf(item),1)
     }
 
     $scope.beerCountText ={
@@ -20,4 +23,5 @@ function Demo2Ctrl ($scope)
           1 : 'Nur noch ein Bier vorhanden',
           other : 'Es sind {} Bier vorhanden'
     }
+
 }

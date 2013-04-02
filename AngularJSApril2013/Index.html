@@ -3,6 +3,7 @@
 <head>
     <title>Angular JS April 2013 - .net user group Köln Sample</title>
     <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-responsive.css" rel="stylesheet" />
     <link href="Content/app.css" rel="stylesheet" />
  </head>
 <body>
@@ -36,15 +37,17 @@
                 <td>{{item.price | currency}} </td>
 
                 <td>{{ item.lastDrunk | date :'fullDate'}}</td>
+
+                <td><button class="btn btn-danger" ng-click="removeItem(item)"><i class="icon icon-remove"></i> Entfernen</button> </td>
             </tr>
         </table>
         <h2><ng-pluralize count='items.length' when="beerCountText"/></h2>
 
         <form>
-        <input  type="text" ng-model="name" placeholder="Name" autofocus /><br/>
+        <input  type="text" ng-model="name" placeholder="Name" autofocus/><br/>
 
         <input  type="text" ng-model="price" placeholder="Preis" /><br/>
-        <button class="btn btn-primary"  ng-click="addNewItem()">Hinzufügen</button>
+        <button class="btn btn-primary" ng-click="addNewItem()"><i class="icon icon-check"></i> Hinzufügen</button>
         </form>
     </div>
     <script src="Scripts/angular.min.js"></script>
