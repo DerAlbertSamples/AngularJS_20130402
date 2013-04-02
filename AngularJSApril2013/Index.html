@@ -31,7 +31,8 @@
         <h1>Demo 3</h1>
 
         <ul>
-            <li ng-repeat="item in items">{{item.name}} {{item.price | currency}}</li>
+
+            <li ng-repeat="item in items">{{item.name}} {{item.price | currency}} {{ item.lastDrunk | date :'fullDate'}}</li>
         </ul>
 
 
