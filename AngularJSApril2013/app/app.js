@@ -14,4 +14,10 @@ function Demo2Ctrl ($scope)
         $scope.name='';
         $scope.price='';
     }
+
+    $scope.beerCountText ={
+          0 : 'Kein Bier!',
+          1 : 'Nur noch ein Bier vorhanden',
+          other : 'Es sind {} Bier vorhanden'
+    }
 }

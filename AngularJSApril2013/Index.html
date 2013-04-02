@@ -38,7 +38,7 @@
                 <td>{{ item.lastDrunk | date :'fullDate'}}</td>
             </tr>
         </table>
-
+        <h2><ng-pluralize count='items.length' when="beerCountText"/></h2>
 
         <form>
         <input  type="text" ng-model="name" placeholder="Name" autofocus /><br/>
