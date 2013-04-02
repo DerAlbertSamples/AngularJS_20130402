@@ -33,7 +33,12 @@
         <ul>
             <li ng-repeat="item in items">{{item.name}}</li>
         </ul>
-    </div>
+
+
+        <form>
+        <input class="input" type="text" ng-model="name"/>
+        <button class="btn btn-primary"  ng-click="addNewItem()">Hinzufügen</button>
+        </form>    </div>
     <script src="Scripts/angular.min.js"></script>
     <script src="app/app.js"></script>
 </body>
